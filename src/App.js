@@ -1,7 +1,10 @@
+import Navbar from "./components/NavBar/NavBar";
+
 function App(){
   return (
-    <div className="app" >
-      <h1 className="titulo">CHESSERS</h1>
+    <div  >
+      {/* <h1 className="titulo">CHESSERS</h1> */}
+      <Navbar/>
     </div>
   );
 }
