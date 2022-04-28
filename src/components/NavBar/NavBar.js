@@ -6,7 +6,8 @@ export default function Navbar(){
     justifyContent:"space-evenly",
     listStyle:"none",
     marginTop:"20px",
-    fontSize:"20px"
+    fontSize:"20px",
+    color:"blanchedalmond"
   }
   
   return(
@@ -15,9 +16,9 @@ export default function Navbar(){
         <h1 className="titulo">CHESSERS</h1>
       </div>
       <ul style={linkStyles}>
-        <li>Inicio</li>
-        <li>Productos</li>
-        <li>Mi perfil</li>
+        <li>INICIO</li>
+        <li>PRODUCTOS</li>
+        <li>QUIENES SOMOS</li>
       </ul>
     </header>
   )
