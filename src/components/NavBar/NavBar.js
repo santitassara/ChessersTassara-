@@ -8,7 +8,7 @@ export default function Navbar(){
     marginTop:"20px",
     fontSize:"20px",
     color:"blanchedalmond"
-  }
+  } 
   
   return(
     <header className="header">
