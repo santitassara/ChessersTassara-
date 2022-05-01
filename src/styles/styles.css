@@ -1,3 +1,4 @@
+
 *{
   margin: 0;
   padding: 0;
@@ -8,13 +9,28 @@
   background-color: black;
 }
 
+.app{
+  display: flex;
+  justify-content:space-between ;
+}
+
 .titulo{
   color: blanchedalmond;
   font-family: sans-serif;
   font-style: normal;
   font-weight: bolder;
   font-size: 50px;
-  position: relative;
-  left: 40%;
+
   
+}
+#navbarScrollingDropdown{
+  color:blanchedalmond;
+}
+.dropdown-menu.show{
+  background-color: black;
+  border-color: blanchedalmond;
+}
+.btn.btn-outline-success{
+  color: blanchedalmond;
+  border-color: blanchedalmond;
 }
