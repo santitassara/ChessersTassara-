@@ -1,5 +1,6 @@
 import ItemListContainer from "./components/Items/ItemListContainer";
-import Header from "./components/NavBar/NavBar";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App(){
   return (
@@ -7,6 +8,7 @@ function App(){
       {/* <h1 className="titulo">CHESSERS</h1> */}
       <Header category1={"Tableros"} category2={"Relojes"} category3={"Otros juegos"}/>
       <ItemListContainer greeting={"Sin Articulos"} />
+      <Footer/>
     </div>
   );
 }

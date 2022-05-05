@@ -34,3 +34,11 @@
   color: blanchedalmond;
   border-color: blanchedalmond;
 }
+
+.items{
+  display: flex;
+  justify-content: space-between;
+  padding:20px;
+  
+  
+}
