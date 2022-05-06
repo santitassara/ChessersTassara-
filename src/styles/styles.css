@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+/*******************************Clases del header************************/
 .header{
   background-color: black;
 }
@@ -35,10 +35,42 @@
   border-color: blanchedalmond;
 }
 
+
+
+/*******************************Clases del ItemListContainer************************/
+
 .items{
   display: flex;
   justify-content: space-between;
   padding:20px;
   
+}
+
+
+/*******************************Clases del AddButton************************/
+
+.addButtonContainer{
+  display: flex;
+  flex-direction: column;
   
+  
+
+}
+.addButtonContainer button{
+
+  text-align: center;
+}
+
+.buttonsChangContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  
+  
+}
+.buttonsChangContainer Button{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 50px;
 }

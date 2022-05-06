@@ -1,5 +1,6 @@
 import React from "react"
 import { toast } from "react-toastify"
+import { Button } from "react-bootstrap"
 
 
 /* --------------- Declaro functional component -------------- */
@@ -53,23 +54,28 @@ export default function AddButton() {
   
 /* ------------------------- Componente presentacion ------------------------ */
   const StockButton = ({handleOnClick, text}) =>{
-    return <button className="stockButton" onClick={handleOnClick}> {text} </button>
+    return <Button className="stockButton" onClick={handleOnClick}> {text} </Button>
     
   }
 
   /* ------------------------- Componente presentacion ------------------------ */
   const AddButton = ({handleOnSubmit}) => {
-    return<button className="addButton" onClick={handleOnSubmit}>Añadir al carrito</button>
+    return<Button className="addButton" onClick={handleOnSubmit}>Añadir al carrito</Button>
     
   }
 
 
   return(
     <div className="addButtonContainer">
-      <StockButton text="-" handleOnClick={onDecrease}/>
-      <span className="addButtonCount">{count}</span>
-      <StockButton text="+" handleOnClick={onAdd}/>
-       <AddButton handleOnSubmit={onSubmit} /> 
+      <div className="buttonsChangContainer">
+        <StockButton text="-" handleOnClick={onDecrease}/>
+        <span className="addButtonCount" >{count}</span>
+        <StockButton text="+" handleOnClick={onAdd}/> <br></br>
+        
+       
+      </div>  
+      <AddButton handleOnSubmit={onSubmit} /> 
+      
     </div>
   )
 }
