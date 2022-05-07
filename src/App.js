@@ -1,4 +1,4 @@
-import ItemListContainer from "./components/Items/ItemListContainer";
+import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
