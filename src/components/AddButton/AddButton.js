@@ -5,11 +5,11 @@ import { Button } from "react-bootstrap"
 
 /* --------------- Declaro functional component -------------- */
 
-export default function AddButton() {
+export default function AddButton({stock}) {
 
   /* ----------------------- Declaro state hook ----------------------- */
   const [count,setCount] = React.useState(1)
-  const stock = 5
+ 
  /* -------------- Declaro un Efecto sobre la cuenta ------------- */
   // React.useEffect(()=>{
   //   if (count!==1){
@@ -24,6 +24,7 @@ export default function AddButton() {
   //       });
   //   }
   // },[count])
+  console.log(stock)
  /* -------------------- Funcion para aumentar la cantidad ------------------- */
   const onAdd= ()=>{
     if(count < stock){
