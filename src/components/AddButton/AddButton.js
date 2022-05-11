@@ -1,11 +1,11 @@
 import React from "react"
-import { toast } from "react-toastify"
-import { Button } from "react-bootstrap"
+import  Buttons  from "../Button/Button"
+
 
 
 /* --------------- Declaro functional component -------------- */
 
-export default function AddButton({stock}) {
+export default function AddButton({stock,onSubmit}) {
 
   /* ----------------------- Declaro state hook ----------------------- */
   const [count,setCount] = React.useState(1)
@@ -40,43 +40,15 @@ export default function AddButton({stock}) {
   }
 
   /* ---------------------- Funcion de Agregar al carrito --------------------- */
-  const onSubmit = ()=>{
-    toast.success(`Agregaste ${count} unidades al carrito`, {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
-
-  }
+ 
   
 /* ------------------------- Componente presentacion ------------------------ */
-  const StockButton = ({handleOnClick, text}) =>{
-    return <Button className="stockButton" onClick={handleOnClick}> {text} </Button>
-    
-  }
-
-  /* ------------------------- Componente presentacion ------------------------ */
-  const AddButton = ({handleOnSubmit}) => {
-    return<Button className="addButton" onClick={handleOnSubmit}>Añadir al carrito</Button>
-    
-  }
+  
 
 
   return(
-    <div className="addButtonContainer">
-      <div className="buttonsChangContainer">
-        <StockButton text="-" handleOnClick={onDecrease}/>
-        <span className="addButtonCount" >{count}</span>
-        <StockButton text="+" handleOnClick={onAdd}/> <br></br>
-        
-       
-      </div>  
-      <AddButton handleOnSubmit={onSubmit} /> 
+    <Buttons suma={onAdd} resta={onDecrease} cuenta={count} submit={onSubmit} count={count}/>
       
-    </div>
+    
   )
 }

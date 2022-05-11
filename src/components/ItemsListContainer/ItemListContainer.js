@@ -3,9 +3,10 @@ import { useState,useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
 import {items} from "../Items/Items.js"
+import { toast } from "react-toastify"
+import AddButton from "../AddButton/AddButton"
 
-
-export default function ItemListContainer({greeting}){
+export default function ItemListContainer({greeting,count}){
   const [listaItems,setListaItems]=useState([]) 
   const [cargando, setCargando] = useState(false)
   const task = new Promise ((resolve, reject) => {
@@ -27,8 +28,19 @@ export default function ItemListContainer({greeting}){
     console.log(err)
   }).finally(()=>setCargando(false))
   },[])
+  
+  const onSubmit = (count)=>{
+    toast.success(`Agregaste ${count} unidades al carrito`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
 
-
+  }
   return(
     
     // <div>
@@ -43,7 +55,7 @@ export default function ItemListContainer({greeting}){
       </Row>
       <Row className="items">
       
-      {cargando? <p style={{textAlign:"center",fontSize:"50px"}}>Cargando...</p> : <ItemList producto={listaItems} key={listaItems.id} />
+      {cargando? <p style={{textAlign:"center",fontSize:"50px"}}>Cargando...</p> : <ItemList producto={listaItems} key={listaItems.id} onSubmit={onSubmit} />
        }
         
         
