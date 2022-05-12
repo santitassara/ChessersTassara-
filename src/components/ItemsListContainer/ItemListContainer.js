@@ -4,9 +4,9 @@ import { Col, Container, Row } from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
 import {items} from "../Items/Items.js"
 import { toast } from "react-toastify"
-import AddButton from "../AddButton/AddButton"
 
-export default function ItemListContainer({greeting,count}){
+
+export default function ItemListContainer({greeting,cuenta}){
   const [listaItems,setListaItems]=useState([]) 
   const [cargando, setCargando] = useState(false)
   const task = new Promise ((resolve, reject) => {
@@ -29,8 +29,10 @@ export default function ItemListContainer({greeting,count}){
   }).finally(()=>setCargando(false))
   },[])
   
-  const onSubmit = (count)=>{
-    toast.success(`Agregaste ${count} unidades al carrito`, {
+
+  const onSubmit = ()=>{
+    //alert(cuenta)
+    toast.success(`Agregaste ${cuenta} unidades al carrito`, {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -41,6 +43,8 @@ export default function ItemListContainer({greeting,count}){
       });
 
   }
+  
+ 
   return(
     
     // <div>

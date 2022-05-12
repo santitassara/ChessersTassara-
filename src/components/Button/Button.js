@@ -1,19 +1,20 @@
 import { Button } from "react-bootstrap"
 
 
-export default function Buttons({submit,resta,cuenta,suma}) {
+export default function Buttons({onSubmit,resta,cuenta,suma}) {
+  //alert(onSubmit)
 
   const StockButton = ({handleOnClick, text}) =>{
     return <Button className="stockButton" onClick={handleOnClick}> {text} </Button>
     
   }
-
+  
   /* ------------------------- Componente presentacion ------------------------ */
   const AddButton = ({handleOnSubmit}) => {
     return<Button className="addButton" onClick={handleOnSubmit}>Añadir al carrito</Button>
     
   }
-
+  
   return(
     <div className="addButtonContainer">
       <div className="buttonsChangContainer">
@@ -23,8 +24,9 @@ export default function Buttons({submit,resta,cuenta,suma}) {
         
        
       </div>  
-      <AddButton handleOnSubmit={submit} /> 
+      <AddButton handleOnSubmit={onSubmit} count={cuenta}/> 
       
     </div>
   )
+ 
 }

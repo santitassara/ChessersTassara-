@@ -38,17 +38,18 @@ export default function AddButton({stock,onSubmit}) {
       setCount(count - 1)
     }
   }
-
+  
+  
   /* ---------------------- Funcion de Agregar al carrito --------------------- */
- 
+  
   
 /* ------------------------- Componente presentacion ------------------------ */
   
-
-
-  return(
-    <Buttons suma={onAdd} resta={onDecrease} cuenta={count} submit={onSubmit} count={count}/>
-      
+return(
+  
+    <Buttons  suma={onAdd} resta={onDecrease} cuenta={count} onSubmit={onSubmit}/> 
     
-  )
+  
+)
+
 }
