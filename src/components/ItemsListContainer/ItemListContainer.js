@@ -3,7 +3,7 @@ import { useState,useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
 import {items} from "../Items/Items.js"
-import { toast } from "react-toastify"
+
 
 
 export default function ItemListContainer({greeting,cuenta}){
@@ -30,19 +30,7 @@ export default function ItemListContainer({greeting,cuenta}){
   },[])
   
 
-  const onSubmit = ()=>{
-    //alert(cuenta)
-    toast.success(`Agregaste ${cuenta} unidades al carrito`, {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
 
-  }
   
  
   return(
@@ -59,7 +47,7 @@ export default function ItemListContainer({greeting,cuenta}){
       </Row>
       <Row className="items">
       
-      {cargando? <p style={{textAlign:"center",fontSize:"50px"}}>Cargando...</p> : <ItemList producto={listaItems} key={listaItems.id} onSubmit={onSubmit} />
+      {cargando? <p style={{textAlign:"center",fontSize:"50px"}}>Cargando...</p> : <ItemList producto={listaItems} key={listaItems.id}  />
        }
         
         

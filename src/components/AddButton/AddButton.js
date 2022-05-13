@@ -1,11 +1,11 @@
 import React from "react"
 import  Buttons  from "../Button/Button"
-
+import { toast } from "react-toastify"
 
 
 /* --------------- Declaro functional component -------------- */
 
-export default function AddButton({stock,onSubmit}) {
+export default function AddButton({stock}) {
 
   /* ----------------------- Declaro state hook ----------------------- */
   const [count,setCount] = React.useState(1)
@@ -41,7 +41,19 @@ export default function AddButton({stock,onSubmit}) {
   
   
   /* ---------------------- Funcion de Agregar al carrito --------------------- */
-  
+    const onSubmit = ()=>{
+    //alert(cuenta)
+    toast.success(`Agregaste ${count} unidades al carrito`, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+
+  }
   
 /* ------------------------- Componente presentacion ------------------------ */
   

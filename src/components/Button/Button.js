@@ -24,7 +24,7 @@ export default function Buttons({onSubmit,resta,cuenta,suma}) {
         
        
       </div>  
-      <AddButton handleOnSubmit={onSubmit} count={cuenta}/> 
+      <AddButton handleOnSubmit={onSubmit} /> 
       
     </div>
   )
