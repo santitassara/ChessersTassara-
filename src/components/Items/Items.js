@@ -5,7 +5,7 @@ export const items = [
     stock:10,
     precio:2500,
     image: "img/TableroMadeira.jpg",
-    description:"Tablero de madera mate de 64 escaques."
+    description:"Tablero de madera con acabado de mate de 64 escaques y notaciones. Contiene sus piezas de madera afelpadas en la base de color verde."
     
   },
   {
@@ -14,7 +14,7 @@ export const items = [
     stock:20,
     precio:1500,
     image: "img/vinilTablero.jpeg",
-    description:"Tablero de vinilo flexible de 64 escaques."
+    description:"Tablero de vinilo flexible de 64 escaques verdes y blancos con notaciones. Contiene 64 piezas plásticas afelpadas en la base de color "
       
   },
   {

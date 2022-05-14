@@ -27,8 +27,7 @@ export default function Header({category1,category2,category3}){
         navbarScroll
       >
         <Nav.Link href="#action1"style={{color:"blanchedalmond"}}>Home</Nav.Link>
-        <Nav.Link href="#action2"style={{color:"blanchedalmond"}}>Contacto</Nav.Link>
-        <NavDropdown title="Articulos" id="navbarScrollingDropdown">
+        <NavDropdown title="Artículos" id="navbarScrollingDropdown">
           <NavDropdown.Item  href="#action3"style={{color:"blanchedalmond",backgroundColor:"black"}}>{category1}</NavDropdown.Item>
           <NavDropdown.Item href="#action4"style={{color:"blanchedalmond",backgroundColor:"black"}}>{category2}</NavDropdown.Item>
           
@@ -36,6 +35,7 @@ export default function Header({category1,category2,category3}){
           {category3}
           </NavDropdown.Item>
         </NavDropdown>
+        <Nav.Link href="#action2"style={{color:"blanchedalmond"}}>Contacto</Nav.Link>
         
       </Nav>
       <Form className="d-flex">

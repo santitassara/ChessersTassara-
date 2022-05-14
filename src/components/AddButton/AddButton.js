@@ -52,6 +52,7 @@ export default function AddButton({stock}) {
       draggable: true,
       progress: undefined,
       });
+      
 
   }
   

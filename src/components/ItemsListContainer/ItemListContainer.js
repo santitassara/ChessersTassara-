@@ -3,12 +3,17 @@ import { useState,useEffect } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
 import {items} from "../Items/Items.js"
-
-
+import LoadingCard from "../LoadingCard/LoadingCard"
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
+import Item from "../item/item"
 
 export default function ItemListContainer({greeting,cuenta}){
   const [listaItems,setListaItems]=useState([]) 
   const [cargando, setCargando] = useState(false)
+  
+
+
+  
   const task = new Promise ((resolve, reject) => {
     setTimeout(() => {
       
@@ -16,6 +21,8 @@ export default function ItemListContainer({greeting,cuenta}){
     }, 2000)
     
   })
+
+  
   useEffect(()=>{
     setCargando(true)
   task.then((result) => {
@@ -29,8 +36,7 @@ export default function ItemListContainer({greeting,cuenta}){
   }).finally(()=>setCargando(false))
   },[])
   
-
-
+  
   
  
   return(
@@ -39,17 +45,17 @@ export default function ItemListContainer({greeting,cuenta}){
     //   {/* <p  style={{fontSize:"40px", display:"flex",justifyContent:"center",fontWeight:"bolder"}}>{greeting}</p> */}
     //   {/* <div className="item"> </div> */}
     // </div>
-    <Container fluid className="itemListContainer">
+    <Container className="itemListContainer">
       <Row>
         <Col>
           <h1 style={{textAlign:"center"}}>Tableros</h1>
         </Col>
       </Row>
-      <Row className="items">
+      <Row className="items" >
       
-      {cargando? <p style={{textAlign:"center",fontSize:"50px"}}>Cargando...</p> : <ItemList producto={listaItems} key={listaItems.id}  />
+      {cargando? <LoadingCard /> : <ItemList  producto={listaItems} key={listaItems.id}  />
        }
-        
+      {cargando? <p></p> : <ItemDetailContainer /> }
         
       </Row>  
       

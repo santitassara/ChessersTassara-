@@ -11,8 +11,8 @@ console.log(producto)
 
   return(
     
-    <div className="items">
-      {producto.map((producto)=><Item producto={producto} key={producto.id} onSubmit={onSubmit}/> )}
+    <div className="items" >
+      {producto.map((producto)=><Item  producto={producto} key={producto.id} onSubmit={onSubmit}/> )}
     </div>
 
   )
