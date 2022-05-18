@@ -1,30 +1,19 @@
 import React from "react"
 import { Figure,Card } from "react-bootstrap"
+import Detail from "../Detail/Detail"
 
-export default function ItemDetail ({prop}) {
-console.log(prop.nombre)
+export default function ItemDetail ({propi}) {
+
+
+
+
 
 
 
 return (
 
-  <div style={{display:"flex",flexDirection:"column",alignItems:"center",width:"500px"}}>
-    <Card.Title >{prop.nombre}</Card.Title>
-    <Figure>
-  <Figure.Image
-    width={391}
-    height={400}
-    alt="171x180"
-    src={prop.image}
-  />
-  <p style={{textAlign:"center"}} >Stock : {prop.stock}</p>
-  <p style={{textAlign:"center",fontWeight:"bolder"}}>Precio: $ {prop.precio}</p>
-  
-  <Figure.Caption style={{width:"400px",fontSize:"20px",textAlign:"center"}}>
-    {prop.description}
-  </Figure.Caption>
-  
-</Figure>
+  <div className="detailStyle" style={{height:"80vh",display:"flex",alignItems:"center",justifyContent:"center"}} >
+    <Detail propi={propi} />
   </div>
    
 )

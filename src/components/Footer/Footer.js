@@ -1,4 +1,6 @@
 import {Container, Row, Col, Nav} from "react-bootstrap";
+import { Link } from "react-router-dom"
+
 export default function Footer () {
   return (
     <footer>
@@ -7,8 +9,10 @@ export default function Footer () {
           <Col xs={12} md={8} lg={4}>
             <div style={{height:"200px"}}>
               <Nav defaultActiveKey="/home" className="flex-column" >
-                <Nav.Link href="/home"style={{color:"blachedalmond"}} >Home</Nav.Link>
-                <Nav.Link eventKey="link-1" style={{color:"blachedalmond"}} >Artículos</Nav.Link>
+              <Nav.Link href="#action1"><Link to="/" style={{color:"blanchedalmond",textDecoration:"none"}} >Home</Link></Nav.Link>
+              <Nav.Link href="#action5"style={{color:"blanchedalmond",backgroundColor:"black"}}><Link to="/products" style={{color:"blanchedalmond",textDecoration:"none"}} >Artículos</Link>
+          </Nav.Link> 
+                
                 <Nav.Link eventKey="link-2">Contacto</Nav.Link>
                 
               </Nav>

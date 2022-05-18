@@ -6,14 +6,20 @@ import {items} from "../Items/Items.js"
 import LoadingCard from "../LoadingCard/LoadingCard"
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 import Item from "../item/item"
+import React from "react"
 
-export default function ItemListContainer({greeting,cuenta}){
+
+export default function ItemListContainer({categoryId}){
   const [listaItems,setListaItems]=useState([]) 
   const [cargando, setCargando] = useState(false)
   
 
 
-  
+ 
+
+
+
+useEffect(()=>{  
   const task = new Promise ((resolve, reject) => {
     setTimeout(() => {
       
@@ -23,20 +29,24 @@ export default function ItemListContainer({greeting,cuenta}){
   })
 
   
-  useEffect(()=>{
+  
     setCargando(true)
   task.then((result) => {
-    setListaItems(result)
+    if(categoryId){
+    setListaItems(result.filter(item => item.categoryId === +categoryId))
     console.log(result)
-  
+  }else
+  {
+    setListaItems(result)
+  }
   }, err => {
     console.log(err)
   }).catch((err) => {
     console.log(err)
   }).finally(()=>setCargando(false))
-  },[])
+  },[categoryId])
   
-  
+ 
   
  
   return(
@@ -53,9 +63,9 @@ export default function ItemListContainer({greeting,cuenta}){
       </Row>
       <Row className="items" >
       
-      {cargando? <LoadingCard /> : <ItemList  producto={listaItems} key={listaItems.id}  />
+      {cargando? <LoadingCard  /> : <ItemList  producto={listaItems} key={listaItems.id}  />
        }
-      {cargando? <p></p> : <ItemDetailContainer /> }
+      {/* <ItemDetailContainer />  */}
         
       </Row>  
       

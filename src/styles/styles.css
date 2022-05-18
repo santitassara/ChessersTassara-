@@ -16,11 +16,11 @@
 
 .titulo{
   color: blanchedalmond;
-  font-family: sans-serif;
+  
   font-style: normal;
   font-weight: bolder;
   font-size: 50px;
-
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   
 }
 #navbarScrollingDropdown{
@@ -37,15 +37,30 @@
 
 
 
+body{
+  font-family: 'Josefin Slab', serif;
+
+
+}
+
+.detailStyle{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+
 /*******************************Clases del ItemListContainer************************/
+
 
 .items{
   display: flex;
   justify-content: space-between;
+  flex-wrap:wrap;
   padding:20px;
   
 }
-
+.card{
+  margin:10px;
+}
 
 /*******************************Clases del AddButton************************/
 

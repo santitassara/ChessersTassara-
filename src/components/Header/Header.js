@@ -1,9 +1,14 @@
 import {Navbar, Container, Nav, NavDropdown,Form,FormControl,Button} from "react-bootstrap"
+import { Link } from "react-router-dom"
 import CartWidget from "../CarWidget/CarWidget"
+
+
+
 export default function Header({category1,category2,category3}){
 
   const linkStyles = {
-    backgroundColor:"black"
+    backgroundColor:"black",
+   
   } 
   
   return(
@@ -11,9 +16,9 @@ export default function Header({category1,category2,category3}){
     <div className="app" >
       <div>
       </div>
-      <h1 className="titulo">CHESSERS</h1>
+      <h1 className="titulo"><Link to="/" style={{color:"blanchedalmond",textDecoration:"none"}} >CHESSERS</Link></h1>
       <div>
-      <CartWidget/>
+      <Link to="/Cart" style={{color:"blanchedalmond",textDecoration:"none"}} ><CartWidget/></Link>
       </div>
     </div>
       <Navbar bg="black" expand="lg">
@@ -26,16 +31,20 @@ export default function Header({category1,category2,category3}){
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1"style={{color:"blanchedalmond"}}>Home</Nav.Link>
+        <Nav.Link href="#action1"><Link to="/" style={{color:"blanchedalmond",textDecoration:"none"}} >Home</Link></Nav.Link>
         <NavDropdown title="Artículos" id="navbarScrollingDropdown">
-          <NavDropdown.Item  href="#action3"style={{color:"blanchedalmond",backgroundColor:"black"}}>{category1}</NavDropdown.Item>
-          <NavDropdown.Item href="#action4"style={{color:"blanchedalmond",backgroundColor:"black"}}>{category2}</NavDropdown.Item>
+          <NavDropdown.Item  href="#action3" style={{backgroundColor:"black"}}><Link to="/category/1" style={{color:"blanchedalmond",textDecoration:"none"}} >{category1}</Link></NavDropdown.Item>
+          <NavDropdown.Item href="#action4" style={{backgroundColor:"black"}}><Link to="/category/2" style={{color:"blanchedalmond",textDecoration:"none"}} >{category2}</Link></NavDropdown.Item>
           
           <NavDropdown.Item href="#action5"style={{color:"blanchedalmond",backgroundColor:"black"}}>
           {category3}
           </NavDropdown.Item>
+          <NavDropdown.Item href="#action5"style={{color:"blanchedalmond",backgroundColor:"black"}}><Link to="/products" style={{color:"blanchedalmond",textDecoration:"none"}} >Todos los artículos</Link>
+          
+          </NavDropdown.Item>
+
         </NavDropdown>
-        <Nav.Link href="#action2"style={{color:"blanchedalmond"}}>Contacto</Nav.Link>
+        <Nav.Link href="#action2"><Link to="/" style={{color:"blanchedalmond",textDecoration:"none"}} >Contacto</Link></Nav.Link>
         
       </Nav>
       <Form className="d-flex">

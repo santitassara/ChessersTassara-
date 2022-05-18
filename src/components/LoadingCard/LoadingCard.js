@@ -4,7 +4,7 @@ export default function LoadingCard(){
 
   return(
 
-    <div className="d-flex justify-content-around">
+    <div className="d-flex justify-content-around" >
   <Card style={{ width: '18rem' }}>
     <Card.Body>
       <Placeholder as={Card.Title} animation="glow">
