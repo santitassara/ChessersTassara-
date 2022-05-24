@@ -1,14 +1,14 @@
 import React from "react"
 import  Buttons  from "../Button/Button"
-import { toast } from "react-toastify"
+import { CartContext } from "../../context/CartContext"
 
 
 /* --------------- Declaro functional component -------------- */
 
-export default function AddButton({stock}) {
+export default function AddButton({stock,onSubmit,cuenta,setCount}) {
 
   /* ----------------------- Declaro state hook ----------------------- */
-  const [count,setCount] = React.useState(1)
+
  
  /* -------------- Declaro un Efecto sobre la cuenta ------------- */
   // React.useEffect(()=>{
@@ -27,40 +27,26 @@ export default function AddButton({stock}) {
   console.log(stock)
  /* -------------------- Funcion para aumentar la cantidad ------------------- */
   const onAdd= ()=>{
-    if(count < stock){
-    setCount(count + 1)
+    if(cuenta < stock){
+    setCount(cuenta + 1)
    }
   }
 
   /* ------------------- Funcion para disminuir la cantidad ------------------- */
   const onDecrease = ()=>{
-    if(count > 1){
-      setCount(count - 1)
+    if(cuenta > 1){
+      setCount(cuenta - 1)
     }
   }
   
   
-  /* ---------------------- Funcion de Agregar al carrito --------------------- */
-    const onSubmit = ()=>{
-    //alert(cuenta)
-    toast.success(`Agregaste ${count} unidades al carrito`, {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
-      
 
-  }
   
 /* ------------------------- Componente presentacion ------------------------ */
   
 return(
   
-    <Buttons  suma={onAdd} resta={onDecrease} cuenta={count} onSubmit={onSubmit}/> 
+    <Buttons  suma={onAdd} resta={onDecrease} cuenta={cuenta} onSubmit={onSubmit}/> 
     
   
 )

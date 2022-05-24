@@ -90,3 +90,14 @@ body{
   width: 50px;
 }
 
+
+
+.badge {
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: #b52400dd;
+  border-radius: 10px}
