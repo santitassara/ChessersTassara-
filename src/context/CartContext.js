@@ -43,15 +43,15 @@ const CartProvider = ({children})=>{
 
   }
    //addToCart
-   const removeFromCart = (id,propi,cuenta) => {
+   const removeFromCart = (propi,cuenta,producto) => {
     // if()
-    if(isInCart(propi.id)) {
-      const newCart = cart.filter((cartItem) => cartItem.id !== id)
+    if(!isInCart(propi.id)) {
+      const newCart = cart.filter((cartItem) => cartItem.id !== producto.id)
       setCart(newCart)
     }else{
       const newCart = cart.map(cartItem => {
         if(cartItem.id === propi.id) {
-          cartItem.quantity++
+          cartItem.quantity--
         }
         return cartItem
       } )
@@ -68,6 +68,7 @@ const CartProvider = ({children})=>{
   }
    //addToCart
    const isInCart = (id) => {
+    
 
     return cart.find(propi => propi.id === id)
 

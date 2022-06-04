@@ -15,7 +15,7 @@ export default function CartWidget(){
     <div style={{display:"flex",flexDirection:"row-reverse", alignItems:"center"}}>
       <img src="../img/CartWidget.png" alt="Carrito" style={{height:"60px",marginRight:"20px"}} />
       
-      {(cart.length === 0)? <span className="badge" >0</span>:<span className="badge">{r.reduce((total, currentValue) => total = total + currentValue)}</span>}
+      {(cart.length === 0)? <span className="badge" ></span>:<span className="badge">{r.reduce((total, currentValue) => total = total + currentValue)}</span>}
       
     </div>
   )

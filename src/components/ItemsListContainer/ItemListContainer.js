@@ -15,8 +15,6 @@ export default function ItemListContainer({categoryId}){
   
 
 
- 
-
 
 
 useEffect(()=>{  
@@ -45,6 +43,8 @@ useEffect(()=>{
     console.log(err)
   }).finally(()=>setCargando(false))
   },[categoryId])
+
+  
   
  
   
