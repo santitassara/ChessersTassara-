@@ -9,11 +9,10 @@ const CartProvider = ({children})=>{
   console.log(cart)
 
   
-  //addToCart
+ 
   const addToCart = (propi,cuenta,count) => {
 
-      /* ---------------------- Funcion de Agregar al carrito --------------------- */
-      // const onSubmit = ()=>{
+    
        
          toast.success(`Agregaste ${cuenta} unidades al carrito`, {
            position: "top-right",
@@ -25,7 +24,7 @@ const CartProvider = ({children})=>{
            progress: undefined,
            });
     
-      // }
+ 
       
      
         if(isInCart(propi.id)) {
@@ -42,15 +41,15 @@ const CartProvider = ({children})=>{
       
 
   }
-   //addToCart
-   const removeFromCart = (propi,cuenta,producto) => {
+   const removeFromCart = (id,propi) => {
     // if()
-    if(!isInCart(propi.id)) {
-      const newCart = cart.filter((cartItem) => cartItem.id !== producto.id)
+    if(isInCart(id)) {
+      
+      const newCart = cart.filter((cartItem) => cartItem.id !== id)
       setCart(newCart)
     }else{
       const newCart = cart.map(cartItem => {
-        if(cartItem.id === propi.id) {
+        if(cartItem.id === id) {
           cartItem.quantity--
         }
         return cartItem
@@ -60,18 +59,43 @@ const CartProvider = ({children})=>{
     }
 
   }
-   //addToCart
+   
    const deleteAll = () => {
 
     setCart([])
 
   }
-   //addToCart
    const isInCart = (id) => {
     
 
     return cart.find(propi => propi.id === id)
 
+  }
+
+
+  const handleQuantity = (propi,id,cuenta) => {
+    const newCart = cart.map(cartItem => {
+      console.log(cuenta)
+      if(cartItem.id === (propi) ) {
+       if (cartItem.quantity > 1){
+        cartItem.quantity-- 
+       }
+      }  
+      return cartItem
+    } )
+    setCart(newCart)
+  }
+  const handleQuantitySum = (propi,id,cuenta) => {
+    const newCart = cart.map(cartItem => {
+      console.log(cuenta)
+      if(cartItem.id === (propi) ) {
+       if (cartItem.quantity < cartItem.stock){
+        cartItem.quantity++ 
+       }
+      }  
+      return cartItem
+    } )
+    setCart(newCart)
   }
   
   
@@ -82,6 +106,8 @@ const CartProvider = ({children})=>{
       removeFromCart,
       deleteAll,
       isInCart,
+      handleQuantity,
+      handleQuantitySum,
       cart,
     }}>{children}</Provider>
   )

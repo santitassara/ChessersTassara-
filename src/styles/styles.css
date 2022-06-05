@@ -101,3 +101,10 @@ body{
   align-items: center;
   background-color: #b52400dd;
   border-radius: 10px}
+
+  .borde{
+    border: 1px solid #b52400dd;
+    border-radius:15px;
+    border-color: red;
+    
+  }
