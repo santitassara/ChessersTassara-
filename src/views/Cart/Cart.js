@@ -19,8 +19,9 @@ export default function Cart(producto,onSubmit){
   const cantidad = carrito.cart.map((cuant)=>cuant.quantity)
   console.log(cantidad)
   console.log(carrito.cart.length)
-
-
+  const r = carrito.cart.map((producto)=>producto.quantity)
+ const b= carrito.cart.map((producto)=>producto.precio * producto.quantity)
+ 
 
   return(
     <Container style={{ }} >
@@ -36,7 +37,7 @@ export default function Cart(producto,onSubmit){
       </div>} 
       {  carrito.cart.length > 0 &&<Table style={{display:"flex",justifyContent:"flex-end"}}>
         <tbody>
-          <tr>  <td>Total:{ }</td>
+          <tr>  <td  style={{fontSize:"30px"}}>{`Total: $ ${b.reduce((total, currentValue) => total = total + currentValue  )}`}</td>
           </tr>
         </tbody>
       </Table>}

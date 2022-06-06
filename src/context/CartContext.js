@@ -7,7 +7,7 @@ const {Provider} = CartContext
 const CartProvider = ({children})=>{
   const[cart,setCart] = React.useState([])
   console.log(cart)
-
+  const[f,setF] = React.useState(false)
   
  
   const addToCart = (propi,cuenta,count) => {
@@ -72,10 +72,37 @@ const CartProvider = ({children})=>{
 
   }
 
+  
+  const handleAlert = (propi,id) => {
+   
+    if(isInCart(propi)) {
 
+      
+      const newCart = cart.map(cartItem => {
+      
+        if(cartItem.id === (propi) ) {
+         if (cartItem.quantity === cartItem.stock) {
+          console.log(cartItem.quantity === cartItem.stock)
+          cartItem.igual =true
+
+         }else{
+           cartItem.igual =false
+         }
+        }  
+        return cartItem
+        
+        
+      } )
+      console.log(newCart)
+      return setCart(newCart)
+      
+    }
+}
+ 
+  
   const handleQuantity = (propi,id,cuenta) => {
     const newCart = cart.map(cartItem => {
-      console.log(cuenta)
+      
       if(cartItem.id === (propi) ) {
        if (cartItem.quantity > 1){
         cartItem.quantity-- 
@@ -87,7 +114,7 @@ const CartProvider = ({children})=>{
   }
   const handleQuantitySum = (propi,id,cuenta) => {
     const newCart = cart.map(cartItem => {
-      console.log(cuenta)
+      console.log(cartItem.stock)
       if(cartItem.id === (propi) ) {
        if (cartItem.quantity < cartItem.stock){
         cartItem.quantity++ 
@@ -108,6 +135,7 @@ const CartProvider = ({children})=>{
       isInCart,
       handleQuantity,
       handleQuantitySum,
+      handleAlert,
       cart,
     }}>{children}</Provider>
   )

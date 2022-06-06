@@ -39,9 +39,11 @@ return (
     <Card.Title style={{marginBottom:"50px",fontSize:"30px",textAlign:"center"}} >{propi.nombre}</Card.Title>
     <p style={{textAlign:"center"}} >Stock : {propi.stock}</p>
     <p style={{textAlign:"center",fontWeight:"bolder",fontSize:"30px"}}>$ {propi.precio}</p>
-    
-    {isInCart(propi.id) ? (<Link to="/Cart" ><Button>Ir al Carrito</Button></Link> ):(
-    <AddButton stock={propi.stock} onSubmit={() => addToCart(propi,count)} cuenta={count} setCount={setCount} />)}
+    <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+      {isInCart(propi.id) ? (<Link to="/Cart" ><Button>Terminar mi compra</Button></Link> ):(
+      <AddButton stock={propi.stock} onSubmit={() => addToCart(propi,count)} cuenta={count} setCount={setCount} />)}
+      {isInCart(propi.id) && (<Link to="/Products" ><Button style={{width:"200px",margin:"10px"}}>Agregar mas productos</Button></Link> )}
+    </div>
   </div>
 </div>
   
