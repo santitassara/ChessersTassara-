@@ -8,7 +8,7 @@ export default function Item ({producto,onSubmit,count,tableros}){
   const navigate = useNavigate()
   return(
     
-    <Card style={producto.quantity > 0 ?{height:"500px" }:{ width: '18rem', textAlign:"center",height:"300px",padding:"15px", display:"flex",flexDirection:"column", justifyContent:"space-between" }}>
+    <Card style={producto.quantity > 0 ?{height:"500px",fontFamily: "Zen Kaku Gothic New, sans-serif" }:{ fontFamily: "Zen Kaku Gothic New, sans-serif",width: '18rem', textAlign:"center",height:"300px",padding:"15px", display:"flex",flexDirection:"column", justifyContent:"space-between" }}>
     <Card.Img variant="top" src={producto.image} style={{height:"180px"}} onClick={()=> navigate(`/product/${producto.id}`)} />
     <Card.Body>
       <Card.Title>{producto.nombre}</Card.Title>

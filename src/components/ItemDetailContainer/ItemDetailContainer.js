@@ -2,6 +2,7 @@ import axios from "axios"
 import React from "react"
 import {items} from "../Items/Items"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import {getDoc,doc, getFirestore, getDocs,collection,query,where} from "firebase/firestore"
 
 
 export default function ItemDetailContainer(productId){
@@ -20,33 +21,44 @@ export default function ItemDetailContainer(productId){
 
   
   React.useEffect(()=>{
+
+
+      const db =getFirestore()
+       const itemRef = doc(db, "Items", productId.productId)
+       getDoc(itemRef).then(snapshot=>{
+         if(snapshot.exists()){
+           console.log(snapshot.data())
+           console.log(snapshot.id)
+           setListaDesc({id: snapshot.id, ...snapshot.data()})
+         }
+         })
     
-    const getDescription = new Promise ((resolve, reject) => {
-      setTimeout(() => {
+    // const getDescription = new Promise ((resolve, reject) => {
+    //   setTimeout(() => {
         
-        resolve(items);
-      }, 2000)
+    //     resolve(items);
+    //   }, 2000)
       
-    })
-    setCargando(true)
+    // })
+    // setCargando(true)
 
-    getDescription.then((res)=>{
+    // getDescription.then((res)=>{
 
 
       
-      if(productId){
-        console.log(productId.productId)
-        console.log(res.find(item => item.id === +productId.productId))
-      setListaDesc(res.find(item => item.id === +productId.productId))
-      }else{
-        setListaDesc(res)
-      }
-    }, err => {
-      console.log(err)
-    }).catch((err) => {
-      console.log(err)
-    }).finally(()=>setCargando(false))
-     console.log(productId)
+    //   if(productId){
+    //     console.log(productId.productId)
+    //     console.log(res.find(item => item.id === +productId.productId))
+    //   setListaDesc(res.find(item => item.id === +productId.productId))
+    //   }else{
+    //     setListaDesc(res)
+    //   }
+    // }, err => {
+    //   console.log(err)
+    // }).catch((err) => {
+    //   console.log(err)
+    // }).finally(()=>setCargando(false))
+    //  console.log(productId)
     },[productId])
   
    
