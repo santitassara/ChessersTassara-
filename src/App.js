@@ -15,13 +15,14 @@ function App(){
     {/* <h1 className="titulo">CHESSERS</h1> */}
       <CartProvider>
         <Header category1={"Tableros"} category2={"Relojes"} category3={"Otros juegos"}/>
+        
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/products" element={<Products/>}/>
             <Route exact path="/product/:productId" element={<Product/>}/>
             <Route exact path="/category/:categoryId" element={<Category/>}/>
             <Route exact path="/cart" element={<Cart/>}/>
-        </Routes>
+          </Routes>
         <Footer/>
       </CartProvider>
     </BrowserRouter>

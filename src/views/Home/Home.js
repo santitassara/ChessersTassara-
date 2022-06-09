@@ -4,6 +4,7 @@ import ItemListContainer from "../../components/ItemsListContainer/ItemListConta
 import Footer from "../../components/Footer/Footer"
 import News from "../../components/Info/Info"
 
+
 export default function Home(){
   return(
     <div>

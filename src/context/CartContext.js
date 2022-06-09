@@ -1,5 +1,6 @@
 import React from "react"
 import { toast } from "react-toastify"
+import Product from "../views/Product/Product";
 const CartContext = React.createContext();
 const {Provider} = CartContext
 
@@ -10,9 +11,10 @@ const CartProvider = ({children})=>{
   const[f,setF] = React.useState(false)
   
  
-  const addToCart = (propi,cuenta,count) => {
 
+  const addToCart = (propi,cuenta,count,items) => {
     
+    console.log(cuenta)
        
          toast.success(`Agregaste ${cuenta} unidades al carrito`, {
            position: "top-right",

@@ -14,7 +14,7 @@ import React from "react"
 export default function ItemListContainer({categoryId}){
   const [listaItems,setListaItems]=useState([]) 
   const [cargando, setCargando] = useState(false)
-  
+  const [search,setSearch] = React.useState("")
 
   useEffect(()=>{
     const db =getFirestore()
@@ -50,6 +50,7 @@ export default function ItemListContainer({categoryId}){
   },[categoryId])
 
 
+  
 // useEffect(()=>{  
 //   const task = new Promise ((resolve, reject) => {
 //     setTimeout(() => {
@@ -94,7 +95,9 @@ export default function ItemListContainer({categoryId}){
     <div >
     {cargando? <LoadingCard/>:<Container className="itemListContainer"><Row>
         <Col>
+        
           <h1 style={{textAlign:"center",fontFamily: "Zen Kaku Gothic New, sans-serif"}}>{ h.length < 2 ? h >1 ? "Relojes":"Tableros":"Todos los productos"}</h1>
+          
         </Col>
       </Row>
       <Row className="items" >
