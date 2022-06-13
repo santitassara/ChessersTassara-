@@ -1,6 +1,6 @@
 // import AddButton from "../AddButton/AddButton" 
 import { useState,useEffect } from "react"
-import { Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row ,Form} from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
 // import {items} from "../Items/Items.js"
 
@@ -9,6 +9,7 @@ import LoadingCard from "../LoadingCard/LoadingCard"
 import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
 import Item from "../item/item"
 import React from "react"
+import Search from "../SearchItem/SearchItem"
 
 
 export default function ItemListContainer({categoryId}){
@@ -85,6 +86,56 @@ export default function ItemListContainer({categoryId}){
  
   console.log(h)
   
+  // const handleSearch = (e) => {
+    
+  //   //e.preventDefault()
+  //   const search = e.target.value;
+  //   if (search !== "" ) {
+  //     setListaItems(listaItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase())))
+  //     console.log(search)
+  //     console.log(listaItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase())))
+  //   }else {
+  //     const db =getFirestore()
+  //     const itemsRef = collection(db, "Items")
+  //     getDocs(itemsRef).then((snapshots)=>{
+  //       if(snapshots === 0){
+  //         console.log("no hay items");
+  //       } 
+  //        setListaItems(snapshots.docs.map(doc=>({id:doc.id, ...doc.data()})))
+  //      }
+  //       )
+  //     }
+  //   }
+  function fireData(){
+    const db = getFirestore();
+      const itemsRef = collection(db, "Items");
+      getDocs(itemsRef).then((snapshots) => {
+        if (snapshots.size === 0) {
+          console.log("No hay items");
+        }
+        setListaItems(snapshots.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      });
+  }
+
+  const handleSearch = (event) => {
+    event.preventDefault()
+    setSearch(event.target.value);
+    if (search !== "") {
+      setListaItems(
+        listaItems.filter((item) =>
+          item.nombre.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    } else {
+      fireData();
+    }
+  };
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    if(e.target.value === "" || !handleSearch){
+      fireData();
+    }
+  }
  
   return(
     
@@ -92,11 +143,17 @@ export default function ItemListContainer({categoryId}){
     //   {/* <p  style={{fontSize:"40px", display:"flex",justifyContent:"center",fontWeight:"bolder"}}>{greeting}</p> */}
     //   {/* <div className="item"> </div> */}
     // </div>
-    <div >
+    <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+      <Search handleSearch={handleSearch} handleChange={handleChange}/>
+      
+    {/* <Form onSubmit={handleSearch}>
+            <Form.Control type="text" placeholder="Buscar" onChange={(e) => handleChange(e)} />
+            <Form.Control type="submit" />
+          </Form> */}
     {cargando? <LoadingCard/>:<Container className="itemListContainer"><Row>
         <Col>
         
-          <h1 style={{textAlign:"center",fontFamily: "Zen Kaku Gothic New, sans-serif"}}>{ h.length < 2 ? h >1 ? "Relojes":"Tableros":"Todos los productos"}</h1>
+          <h1 style={{textAlign:"center",fontFamily: "Zen Kaku Gothic New, sans-serif"}}>{ categoryId === "Tableros" ? "Tableros": categoryId === "Relojes" ? "Relojes":"Todos los productos"}</h1>
           
         </Col>
       </Row>

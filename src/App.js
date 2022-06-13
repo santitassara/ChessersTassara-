@@ -8,6 +8,7 @@ import Products from "./views/Products/Products";
 import Product from "./views/Product/Product"
 import Cart from "./views/Cart/Cart"
 import Category from "./views/Category/Category"
+import Checkout from "./components/Checkout/Checkout";
 
 function App(){
   return (
@@ -22,6 +23,8 @@ function App(){
             <Route exact path="/product/:productId" element={<Product/>}/>
             <Route exact path="/category/:categoryId" element={<Category/>}/>
             <Route exact path="/cart" element={<Cart/>}/>
+            <Route exact path="/checkout" element={<Checkout/>}/>
+            <Route exact path="*" element={<div>404</div>}/>
           </Routes>
         <Footer/>
       </CartProvider>

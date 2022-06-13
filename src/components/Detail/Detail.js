@@ -40,9 +40,9 @@ return (
     <p style={{textAlign:"center"}} >Stock : {propi.stock}</p>
     <p style={{textAlign:"center",fontWeight:"bolder",fontSize:"30px"}}>$ {propi.precio}</p>
     <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-      {isInCart(propi.id) ? (<Link to="/Cart" ><Button>Terminar mi compra</Button></Link> ):(
+      {isInCart(propi.id) ? (<Link to="/Cart" ><Button>Ir al carrito</Button></Link> ):(
       <AddButton stock={propi.stock} onSubmit={() => addToCart(propi,count)} cuenta={count} setCount={setCount} />)}
-      {isInCart(propi.id) && (<Link to="/Products" ><Button style={{width:"200px",margin:"10px"}}>Agregar mas productos</Button></Link> )}
+      {isInCart(propi.id) && (<Link to="/Products" ><Button id={"endBuy"}style={{width:"200px",margin:"10px"}}>Agregar mas productos</Button></Link> )}
     </div>
   </div>
 </div>

@@ -41,7 +41,11 @@ export default function Cart(producto,onSubmit){
           </tr>
         </tbody>
       </Table>}
-      {carrito.cart.length > 0 && <Button onClick={()=>carrito.deleteAll()} >Borrar todo</Button>}
+        <div style={{display:"flex",flexDirection:"column-reverse",alignItems:"center",height:"100px", justifyContent:"space-evenly"}}>
+          {carrito.cart.length > 0 && <Button variant="danger" onClick={()=>carrito.deleteAll()} >Borrar todo</Button>}
+          {carrito.cart.length > 0 && <Link to="/checkout" ><Button variant="success" className="ButtonEndBuy" >Terminar mi compra</Button></Link>}
+        </div>
+      {/* (<Button style={{width:"200px",margin:"10px"}}>Agregar mas productos</Button> ) */}
     </div>
     </div>
     </Container>
