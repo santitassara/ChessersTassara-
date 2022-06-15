@@ -7,6 +7,10 @@
 /*******************************Clases del header************************/
 .header{
   background-color: black;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 19px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
 .app{
@@ -44,6 +48,7 @@ body{
 }
 
 .detailStyle{
+  
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
@@ -52,6 +57,7 @@ body{
 
 
 .items{
+  height: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap:wrap;
@@ -114,8 +120,8 @@ body{
   border-color: #b52400dd;}
 
   .checkoutForm{
-    margin:50px;
-    height: 50vh;
+    margin:10px;
+    margin-bottom:50px ;
     width: 60vw;
     display:flex;
     flex-direction:column ;
@@ -151,3 +157,30 @@ body{
   }
   .s { grid-area: s; }
   .c { grid-area: c; }
+
+  .total{border-top:1px solid hsla(0,0%,40.4%,.3)}
+
+  .endTotal{
+    min-height: 80vh;
+    
+  }
+
+  .footerB{
+    color:blanchedalmond;
+    text-decoration:none;
+    margin:10px ;
+    
+  }
+  .FooPos{
+    font-size: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+  font-weight: bolder;
+ 
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+    
+  }
+

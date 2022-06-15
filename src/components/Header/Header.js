@@ -10,11 +10,10 @@ export default function Header({category1,category2,category3}){
 
   const linkStyles = {
     backgroundColor:"black",
-   
   } 
 
   return(
-    <div style={linkStyles}>
+    <div style={linkStyles} className="header">
     <div className="app" >
       <div>
       </div>
@@ -33,20 +32,20 @@ export default function Header({category1,category2,category3}){
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <NavLink  to="/" style={{color:"blanchedalmond",textDecoration:"none"}} >Home</NavLink>
+        <Nav.Link  as={Link} to="/" style={{color:"blanchedalmond",textDecoration:"none"}} ><Link to="/"style={{color:"blanchedalmond",textDecoration:"none"}} >Home</Link></Nav.Link>
         <NavDropdown title="Artículos" id="navbarScrollingDropdown">
-          <NavDropdown.Item   style={{backgroundColor:"black"}}><Link to="/category/Tableros" style={{color:"blanchedalmond",textDecoration:"none"}} >{category1}</Link></NavDropdown.Item>
-          <NavDropdown.Item  style={{backgroundColor:"black"}}><Link to="/category/Relojes" style={{color:"blanchedalmond",textDecoration:"none"}} >{category2}</Link></NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/category/Tableros" style={{backgroundColor:"black"}}><Link to="/category/Tableros" style={{color:"blanchedalmond",textDecoration:"none"}} >{category1}</Link></NavDropdown.Item>
+          <NavDropdown.Item  as={Link} to="/category/Relojes" style={{backgroundColor:"black"}}><Link to="/category/Relojes" style={{color:"blanchedalmond",textDecoration:"none"}} >{category2}</Link></NavDropdown.Item>
           
-          <NavDropdown.Item style={{color:"blanchedalmond",backgroundColor:"black"}}>
+          {/* <NavDropdown.Item  style={{color:"blanchedalmond",backgroundColor:"black"}}>
           {category3}
-          </NavDropdown.Item>
-          <NavDropdown.Item style={{color:"blanchedalmond",backgroundColor:"black"}}><Link to="/products" style={{color:"blanchedalmond",textDecoration:"none"}} >Todos los artículos</Link>
+          </NavDropdown.Item> */}
+          <NavDropdown.Item  as={Link} to="/products" style={{color:"blanchedalmond",backgroundColor:"black"}}><Link to="/products" style={{color:"blanchedalmond",textDecoration:"none"}} >Todos los artículos</Link>
           
           </NavDropdown.Item>
 
         </NavDropdown>
-         <Nav.Link  ><Link to="/" style={{color:"blanchedalmond",textDecoration:"none"}}>Contacto</Link></Nav.Link>
+         <Nav.Link as={Link} to="/Cart" ><Link to="/Cart" style={{color:"blanchedalmond",textDecoration:"none"}}>Carrito</Link></Nav.Link>
         
       </Nav>
       

@@ -13,7 +13,7 @@ import CartItem from "../../components/CartItem/CartItem";
 export default function Cart(producto,onSubmit){
 
   const carrito = React.useContext(CartContext)
-  console.log(carrito)
+  console.log(carrito.cart )
   console.log(carrito.cart.map((cuant)=>cuant.quantity))
 
   const cantidad = carrito.cart.map((cuant)=>cuant.quantity)
@@ -24,10 +24,10 @@ export default function Cart(producto,onSubmit){
  
 
   return(
-    <Container style={{ }} >
-    <div>
+    <Container  >
+    <div style={{height: carrito.cart.length < 5 && "80vh",margin:"50px" }}>
     <h1 style={{textAlign:"center"}}>Carrito</h1>
-    <div style={{height:"80vh",display:"flex", flexDirection:"column", alignItems:"center"}}>
+    <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
 
 
       {/* { carrito.cart.length > 0 ? carrito.cart.map((producto)=><Item producto={producto} id={producto.id} onSubmit={()=>carrito.removeFromCart(producto.id)} quantity={producto.quantity}/> ):<h1>No agregaste artículos</h1>} */}

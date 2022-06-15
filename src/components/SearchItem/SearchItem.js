@@ -5,7 +5,7 @@ export default function Search({handleSearch,handleChange}){
 
   return(
     <Form style={{width:"300px",margin:"20px"}} onSubmit={handleSearch}>
-        <Form.Control tyoe="text" placeholder="Buscar" onChange={(e) => handleChange(e)}/>
+        <Form.Control type="text" placeholder="Buscar" onChange={(e) => handleChange(e)}/>
     </Form>
   )
 }

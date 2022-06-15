@@ -6,6 +6,7 @@ import {Link, Navigate, useNavigate} from "react-router-dom"
 
 export default function Item ({producto,onSubmit,count,tableros}){
   const navigate = useNavigate()
+  
   return(
     
     <Card style={producto.quantity > 0 ?{height:"500px",fontFamily: "Zen Kaku Gothic New, sans-serif" }:{ fontFamily: "Zen Kaku Gothic New, sans-serif",width: '18rem', textAlign:"center",height:"300px",padding:"15px", display:"flex",flexDirection:"column", justifyContent:"space-between" }}>

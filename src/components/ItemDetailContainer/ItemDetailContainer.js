@@ -67,7 +67,7 @@ export default function ItemDetailContainer(productId){
   return (
     // <p>{tableros }</p>
     <div>
-    {cargando ? <h1 style={{height:"80vh"}} >Obteniendo producto...</h1> : <ItemDetail propi={listaDesc} key={listaDesc.id}/>}
+    {cargando ? <h1 style={{height:"80vh"}} >Obteniendo producto...</h1> : <ItemDetail  propi={listaDesc} key={listaDesc.id}/>}
     
     </div>
   )

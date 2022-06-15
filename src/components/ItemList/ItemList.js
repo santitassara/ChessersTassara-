@@ -6,12 +6,16 @@ import Item from "../item/item"
 export default function ItemList({producto,onSubmit}){
 
   
-console.log(producto)
+console.log(producto.length < 5)
 
 
   return(
     
-    <div className="items" style={{height:"90vh"}}>
+    <div style={{display:"flex",
+      justifyContent: "space-between",
+      flexWrap:"wrap",
+      padding:"20px",height: producto.length < 5 ? "80vh":"100%"}}>
+      
       {producto.map((producto)=><Item producto={producto} key={producto.id} onSubmit={onSubmit}/> )}
     </div>
 

@@ -17,6 +17,7 @@ export default function ItemListContainer({categoryId}){
   const [cargando, setCargando] = useState(false)
   const [search,setSearch] = React.useState("")
 
+
   useEffect(()=>{
     const db =getFirestore()
     // const itemRef = doc(db, "Items", "Lnr5AnubmLPY4cM05RDK")
@@ -27,6 +28,7 @@ export default function ItemListContainer({categoryId}){
     //     console.log({id: snapshot.id, ...snapshot.data()})
     //   }
     //   })
+    setCargando(true)
     if(categoryId){
     const q = query(collection(db, "Items"),where("categoryId","==",categoryId))
     getDocs(q).then((snapshots)=>{
@@ -36,7 +38,7 @@ export default function ItemListContainer({categoryId}){
       setListaItems(snapshots.docs.map(doc=>({id:doc.id, ...doc.data()})))
 
       console.log(categoryId)
-    })
+    }).finally(()=>setCargando(false))
 
   }else{
     const itemsRef = collection(db, "Items")
@@ -45,7 +47,7 @@ export default function ItemListContainer({categoryId}){
       console.log("no hay items");
     } 
      setListaItems(snapshots.docs.map(doc=>({id:doc.id, ...doc.data()})))
-   })
+   }).finally(()=>setCargando(false))
    
   }
   },[categoryId])
@@ -106,7 +108,9 @@ export default function ItemListContainer({categoryId}){
   //       )
   //     }
   //   }
+  
   function fireData(){
+    
     const db = getFirestore();
       const itemsRef = collection(db, "Items");
       getDocs(itemsRef).then((snapshots) => {
@@ -114,13 +118,14 @@ export default function ItemListContainer({categoryId}){
           console.log("No hay items");
         }
         setListaItems(snapshots.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      });
+      })
+      
   }
 
   const handleSearch = (event) => {
     event.preventDefault()
     setSearch(event.target.value);
-    if (search !== "") {
+    if (search !== "" ) {
       setListaItems(
         listaItems.filter((item) =>
           item.nombre.toLowerCase().includes(search.toLowerCase())

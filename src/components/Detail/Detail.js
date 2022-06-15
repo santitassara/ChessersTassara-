@@ -17,7 +17,7 @@ console.log(propi.nombre)
 return (
 
   
-<div style={{display:"flex"}}>
+<div style={{display:"flex",height:"80vh",alignItems:"center"}}>
    
   <div style={{display:"flex",flexDirection:"column",alignItems:"center",width:"500px"}}>
    
