@@ -24,7 +24,7 @@ export default function News(){
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src="../img/chessCarousel.webp"
+        src="../img/chessCarousel.jpg"
         alt="Second slide"
       />
     </Carousel.Item>
