@@ -1,5 +1,5 @@
-import{Table,Button,Container,Alert} from "react-bootstrap"
-import Item from "../../components/item/item";
+import{Table,Button} from "react-bootstrap"
+
 import { CartContext } from "../../context/CartContext";
 import React from "react";
 

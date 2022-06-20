@@ -1,13 +1,12 @@
 import axios from "axios"
 import React from "react"
-import {items} from "../Items/Items"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import {getDoc,doc, getFirestore, getDocs,collection,query,where} from "firebase/firestore"
+import {getDoc,doc, getFirestore} from "firebase/firestore"
 
 
 export default function ItemDetailContainer(productId){
   const [tableros,setTableros] = React.useState([])
-  const [cargando, setCargando] = React.useState(false)
+
   const [listaDesc,setListaDesc]=React.useState([])
 
 

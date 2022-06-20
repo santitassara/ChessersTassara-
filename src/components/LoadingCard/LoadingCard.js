@@ -1,4 +1,4 @@
-import  {Card,Spinner,Placeholder} from "react-bootstrap"
+import  {Spinner} from "react-bootstrap"
 
 export default function LoadingCard(){
 

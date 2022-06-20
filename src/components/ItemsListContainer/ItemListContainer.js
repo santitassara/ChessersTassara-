@@ -1,13 +1,8 @@
-// import AddButton from "../AddButton/AddButton" 
 import { useState,useEffect } from "react"
 import { Col, Container, Row ,Form} from "react-bootstrap"
 import ItemList from "../ItemList/ItemList"
-// import {items} from "../Items/Items.js"
-
-import {getDoc,doc, getFirestore, getDocs,collection,query,where} from "firebase/firestore"
+import { getFirestore, getDocs,collection,query,where} from "firebase/firestore"
 import LoadingCard from "../LoadingCard/LoadingCard"
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer"
-import Item from "../item/item"
 import React from "react"
 import Search from "../SearchItem/SearchItem"
 

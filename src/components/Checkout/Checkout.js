@@ -1,10 +1,10 @@
 import React from "react"
-import { useParams,Link,useNavigate } from "react-router-dom"
-import { Col, Container, Row ,Form,Button} from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+import { Form,Button} from "react-bootstrap"
 import { CartContext } from "../../context/CartContext";
 import BuyData from "../../components/BuyData/BuyData";
-import {doc,getDocs,updateDoc,addDoc,runTransaction,collection,getFirestore,}from "firebase/firestore";
-import ItemDetail from "../Detail/Detail";
+import {doc,getDocs,addDoc,runTransaction,collection,getFirestore,}from "firebase/firestore";
+
 
 export default function Checkout() {
   const navigate = useNavigate()

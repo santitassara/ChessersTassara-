@@ -1,5 +1,5 @@
 import React from "react";
-import Cart from "../../views/Cart/Cart";
+
 import { CartContext } from "../../context/CartContext";
 
 export default function CartWidget(){

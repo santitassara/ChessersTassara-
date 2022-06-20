@@ -1,14 +1,10 @@
-
-
 import React from "react";
 import{Table,Button,Container, Nav} from "react-bootstrap"
-import ItemList from "../../components/ItemList/ItemList";
-import ItemListContainer from "../../components/ItemsListContainer/ItemListContainer";
-import { useParams,Link } from "react-router-dom"
-import Item from "../../components/item/item";
+import { Link } from "react-router-dom"
 import { CartContext } from "../../context/CartContext";
-import { Alert } from "react-bootstrap";
 import CartItem from "../../components/CartItem/CartItem";
+
+
 
 export default function Cart(producto,onSubmit){
 

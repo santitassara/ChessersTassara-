@@ -1,4 +1,3 @@
-import ItemListContainer from "./components/ItemsListContainer/ItemListContainer";
 import { CartProvider } from "./context/CartContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";

@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row ,Form} from "react-bootstrap"
+import { Form} from "react-bootstrap"
 
 export default function Search({handleSearch,handleChange}){
 

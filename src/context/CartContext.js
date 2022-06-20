@@ -1,6 +1,5 @@
 import React from "react"
 import { toast } from "react-toastify"
-import Product from "../views/Product/Product";
 const CartContext = React.createContext();
 const {Provider} = CartContext
 
