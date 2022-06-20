@@ -2,14 +2,14 @@ import { Button } from "react-bootstrap"
 import {CartContext} from "../../context/CartContext"
 
 export default function Buttons({onSubmit,resta,cuenta,suma}) {
-  //alert(cuenta)
+
 
   const StockButton = ({handleOnClick, text}) =>{
     return <Button className="stockButton" onClick={handleOnClick}> {text} </Button>
     
   }
   
-  /* ------------------------- Componente presentacion ------------------------ */
+
   const AddButton = ({handleOnSubmit}) => {
     return<Button className="addButton" onClick={handleOnSubmit}>Añadir al carrito</Button>
     

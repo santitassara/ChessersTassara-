@@ -2,11 +2,7 @@
 import {Figure} from "react-bootstrap"
 
 
-export default function InfoItem(img){
-
-  console.log(img.img)
-
-  
+export default function InfoItem(img){  
 
   return(
     

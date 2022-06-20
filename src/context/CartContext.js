@@ -7,14 +7,10 @@ const {Provider} = CartContext
 
 const CartProvider = ({children})=>{
   const[cart,setCart] = React.useState([])
-  console.log(cart)
-  const[f,setF] = React.useState(false)
-  
  
 
   const addToCart = (propi,cuenta,count,items) => {
     
-    console.log(cuenta)
        
          toast.success(`Agregaste ${cuenta} unidades al carrito`, {
            position: "top-right",
@@ -44,7 +40,7 @@ const CartProvider = ({children})=>{
 
   }
    const removeFromCart = (id,propi) => {
-    // if()
+    
     if(isInCart(id)) {
       
       const newCart = cart.filter((cartItem) => cartItem.id !== id)
@@ -84,7 +80,7 @@ const CartProvider = ({children})=>{
       
         if(cartItem.id === (propi) ) {
          if (cartItem.quantity === cartItem.stock) {
-          console.log(cartItem.quantity === cartItem.stock)
+          
           cartItem.igual =true
 
          }else{
@@ -95,7 +91,7 @@ const CartProvider = ({children})=>{
         
         
       } )
-      console.log(newCart)
+      
       return setCart(newCart)
       
     }
@@ -116,7 +112,7 @@ const CartProvider = ({children})=>{
   }
   const handleQuantitySum = (propi,id,cuenta) => {
     const newCart = cart.map(cartItem => {
-      console.log(cartItem.stock)
+      
       if(cartItem.id === (propi) ) {
        if (cartItem.quantity < cartItem.stock){
         cartItem.quantity++ 

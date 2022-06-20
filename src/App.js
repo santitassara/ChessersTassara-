@@ -13,7 +13,7 @@ import Checkout from "./components/Checkout/Checkout";
 function App(){
   return (
     <BrowserRouter>
-    {/* <h1 className="titulo">CHESSERS</h1> */}
+    
       <CartProvider>
         <Header category1={"Tableros"} category2={"Relojes"} category3={"Otros juegos"}/>
         

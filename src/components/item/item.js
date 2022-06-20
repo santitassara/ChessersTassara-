@@ -14,9 +14,6 @@ export default function Item ({producto,onSubmit,count,tableros}){
     <Card.Body>
       <Card.Title>{producto.nombre}</Card.Title>
       <Card.Text >
-        {/* <p>Stock: {producto.stock}</p> */}
-        {/* <p style={{fontWeight:"bolder"}}>Precio: ${producto.precio}</p> */}
-        {/* <p style={{fontWeight:"bolder"}}>{producto.description}  </p> */}
         {producto.quantity > 0 && <span>Cantidad:{producto.quantity}</span>}
      
       </Card.Text>

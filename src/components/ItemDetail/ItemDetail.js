@@ -1,14 +1,8 @@
 import React from "react"
-import { Figure,Card } from "react-bootstrap"
+
 import Detail from "../Detail/Detail"
 
 export default function ItemDetail ({propi}) {
-
-
-
-
-
-
 
 return (
 

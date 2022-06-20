@@ -34,10 +34,10 @@ export default function News(){
   <div style={{marginTop:"50px" ,marginBottom:"50px"}} >
       <div style={{display:"flex",flexDirection:"row",justifyContent:"space-around",margin:"10px"}}>
       
-      {imgs.map((img)=> <InfoItem img={img} />)}
+      {imgs.map((img)=> <InfoItem key={img} img={img} />)}
       </div>  
       <div style={{display:"flex",flexDirection:"row",justifyContent:"space-around",margin:"10px"}}>
-      {texts.map((text)=><Figure.Caption>{text}</Figure.Caption>)}
+      {texts.map((text)=><Figure.Caption key={text}>{text}</Figure.Caption>)}
       </div>
     </div>
   </>

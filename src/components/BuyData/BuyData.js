@@ -1,24 +1,17 @@
 import React from "react"
-import { useParams,Link,useNavigate } from "react-router-dom"
-import { Col, Container, Row ,Form,Button} from "react-bootstrap"
-import { CartContext } from "../../context/CartContext";
 
-// Importamos las dependencias que necesitamos desde firebase
-import {doc,getDoc,updateDoc,addDoc,runTransaction,collection,getFirestore,}from "firebase/firestore";
 
 
 
 export default function BuyData(orderCompare) {
 
 
-console.log(orderCompare)
+
 const buyer = (orderCompare.orderCompare)
-console.log(buyer)
-console.log(buyer.map((b)=>b.buyer.Nombre))
+
 const buyerItem = (buyer.map((i)=>i.items))
-console.log(buyerItem)
+
 const buyerItem2 = (buyerItem.map((i)=>i.map((b)=>b.nombre)))
-//console.log(buyerItem[0].map((b)=>b.nombre))
 const total = (buyer.map((b)=>b.total))
 
 

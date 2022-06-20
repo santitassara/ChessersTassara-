@@ -5,9 +5,6 @@ import Item from "../item/item"
 
 export default function ItemList({producto,onSubmit}){
 
-  
-console.log(producto.length < 5)
-
 
   return(
     

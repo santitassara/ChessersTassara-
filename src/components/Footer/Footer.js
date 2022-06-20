@@ -14,9 +14,6 @@ export default function Footer () {
               <Link to="/Cart" className="footerB" style={{color:"blanchedalmond",textDecoration:"none"}} >Carrito</Link>              
               </Nav>
             </div>
-          
-          
-        
       </div>
     </footer>
   )
