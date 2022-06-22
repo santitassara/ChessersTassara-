@@ -18,14 +18,14 @@ Proyecto de tienda on-line de productos relacionados principálmente con el Ajed
 
 Se inicia la aplicación web en una home en la cual figura un navbar 
 para localizar los productos dispinibles para su venta.
+Una vez se deciden el/los artículos deseados ,los mismos, se ubican en el carrito y luego se concluye 
+la compra detallando los datos del comprador .
+Las ordenes se guardan en firebase descontando el stock de artículos seleccionados.
 
 
 <!-- ---------------------------------- Secciones de la Aplicación web ---------------------------------- -->
 
 -> Home
 -> Artículos
--> Contacto
-
-
 -> Carrito
 
